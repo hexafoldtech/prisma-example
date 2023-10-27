@@ -23,5 +23,8 @@
   "dependencies": {
     "@prisma/client": "5.5.2",
     "fastify": "^4.24.3"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }

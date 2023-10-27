@@ -112,6 +112,20 @@ exports.Prisma.ModelPSQL2ScalarFieldEnum = {
   model: 'model'
 };
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  name: 'name'
+};
+
+exports.Prisma.PostScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  content: 'content',
+  published: 'published',
+  userId: 'userId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -124,7 +138,9 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  ModelPSQL2: 'ModelPSQL2'
+  ModelPSQL2: 'ModelPSQL2',
+  User: 'User',
+  Post: 'Post'
 };
 
 /**

@@ -7,9 +7,7 @@
     "dev": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma": "prisma generate --schema prisma/schema1.prisma --watch & prisma generate --schema prisma/schema2.prisma --watch",
-    "migrate-create":"npx prisma migrate dev --schema prisma/schema1.prisma",
-    "migrate-create2":"npx prisma migrate dev --schema prisma/schema2.prisma",
-    "migrate": "npx prisma --schema prisma/schema1.prisma migrate dev & prisma --schema prisma/schema2.prisma migrate dev"
+    "migrate-create":"npx prisma migrate dev --schema prisma/schema1.prisma & npx prisma migrate dev --schema prisma/schema2.prisma"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +23,7 @@
     "fastify": "^4.24.3"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node prisma/seed.ts",
+    "schema": "prisma/schema1.prisma"
   }
 }

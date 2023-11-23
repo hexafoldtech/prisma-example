@@ -8,14 +8,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("PSQL2_URL")
+  url      = env("USER_DATABSE_URL")
 }
-
-model ModelPSQL2 {
-  id         Int @id @default(autoincrement())
-  model String
-}
-
 model User {
   id    Int    @id @default(autoincrement())
   email String @unique

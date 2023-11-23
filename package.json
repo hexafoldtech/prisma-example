@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prisma": "prisma generate --schema prisma/schema1.prisma --watch & prisma generate --schema prisma/schema2.prisma --watch",
-    "migrate-create":"npx prisma migrate dev --schema prisma/schema1.prisma & npx prisma migrate dev --schema prisma/schema2.prisma"
+    "prisma": "prisma generate --schema prisma/auth.prisma --watch & prisma generate --schema prisma/order.prisma --watch",
+    "generate_auth_client": "prisma generate --schema prisma/auth.prisma",
+    "generate_order_client": "prisma generate --schema prisma/order.prisma",
+    "migrate-create":"npx prisma migrate dev --schema prisma/auth.prisma && npx prisma migrate dev --schema prisma/order.prisma"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +25,6 @@
     "fastify": "^4.24.3"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts",
-    "schema": "prisma/schema1.prisma"
+    "seed": "ts-node prisma/seed.ts"
   }
 }

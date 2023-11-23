@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model ModelPSQL1
+ * Model Orders
  * 
  */
-export type ModelPSQL1 = $Result.DefaultSelection<Prisma.$ModelPSQL1Payload>
+export type Orders = $Result.DefaultSelection<Prisma.$OrdersPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -26,8 +26,8 @@ export type ModelPSQL1 = $Result.DefaultSelection<Prisma.$ModelPSQL1Payload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more ModelPSQL1s
- * const modelPSQL1s = await prisma.modelPSQL1.findMany()
+ * // Fetch zero or more Orders
+ * const orders = await prisma.orders.findMany()
  * ```
  *
  * 
@@ -47,8 +47,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more ModelPSQL1s
-   * const modelPSQL1s = await prisma.modelPSQL1.findMany()
+   * // Fetch zero or more Orders
+   * const orders = await prisma.orders.findMany()
    * ```
    *
    * 
@@ -142,14 +142,14 @@ export class PrismaClient<
   $extends: $Extensions.ExtendsHook<'extends', Prisma.TypeMapCb, ExtArgs>
 
       /**
-   * `prisma.modelPSQL1`: Exposes CRUD operations for the **ModelPSQL1** model.
+   * `prisma.orders`: Exposes CRUD operations for the **Orders** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more ModelPSQL1s
-    * const modelPSQL1s = await prisma.modelPSQL1.findMany()
+    * // Fetch zero or more Orders
+    * const orders = await prisma.orders.findMany()
     * ```
     */
-  get modelPSQL1(): Prisma.ModelPSQL1Delegate<ExtArgs>;
+  get orders(): Prisma.OrdersDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -620,7 +620,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    ModelPSQL1: 'ModelPSQL1'
+    Orders: 'Orders'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -637,73 +637,73 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'modelPSQL1'
+      modelProps: 'orders'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
-      ModelPSQL1: {
-        payload: Prisma.$ModelPSQL1Payload<ExtArgs>
-        fields: Prisma.ModelPSQL1FieldRefs
+      Orders: {
+        payload: Prisma.$OrdersPayload<ExtArgs>
+        fields: Prisma.OrdersFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ModelPSQL1FindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload> | null
+            args: Prisma.OrdersFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ModelPSQL1FindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>
+            args: Prisma.OrdersFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           findFirst: {
-            args: Prisma.ModelPSQL1FindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload> | null
+            args: Prisma.OrdersFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ModelPSQL1FindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>
+            args: Prisma.OrdersFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           findMany: {
-            args: Prisma.ModelPSQL1FindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>[]
+            args: Prisma.OrdersFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>[]
           }
           create: {
-            args: Prisma.ModelPSQL1CreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>
+            args: Prisma.OrdersCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           createMany: {
-            args: Prisma.ModelPSQL1CreateManyArgs<ExtArgs>,
+            args: Prisma.OrdersCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.ModelPSQL1DeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>
+            args: Prisma.OrdersDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           update: {
-            args: Prisma.ModelPSQL1UpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>
+            args: Prisma.OrdersUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           deleteMany: {
-            args: Prisma.ModelPSQL1DeleteManyArgs<ExtArgs>,
+            args: Prisma.OrdersDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.ModelPSQL1UpdateManyArgs<ExtArgs>,
+            args: Prisma.OrdersUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.ModelPSQL1UpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL1Payload>
+            args: Prisma.OrdersUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           aggregate: {
-            args: Prisma.ModelPSQL1AggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateModelPSQL1>
+            args: Prisma.OrdersAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateOrders>
           }
           groupBy: {
-            args: Prisma.ModelPSQL1GroupByArgs<ExtArgs>,
-            result: $Utils.Optional<ModelPSQL1GroupByOutputType>[]
+            args: Prisma.OrdersGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<OrdersGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ModelPSQL1CountArgs<ExtArgs>,
-            result: $Utils.Optional<ModelPSQL1CountAggregateOutputType> | number
+            args: Prisma.OrdersCountArgs<ExtArgs>,
+            result: $Utils.Optional<OrdersCountAggregateOutputType> | number
           }
         }
       }
@@ -857,347 +857,347 @@ export namespace Prisma {
    */
 
   /**
-   * Model ModelPSQL1
+   * Model Orders
    */
 
-  export type AggregateModelPSQL1 = {
-    _count: ModelPSQL1CountAggregateOutputType | null
-    _avg: ModelPSQL1AvgAggregateOutputType | null
-    _sum: ModelPSQL1SumAggregateOutputType | null
-    _min: ModelPSQL1MinAggregateOutputType | null
-    _max: ModelPSQL1MaxAggregateOutputType | null
+  export type AggregateOrders = {
+    _count: OrdersCountAggregateOutputType | null
+    _avg: OrdersAvgAggregateOutputType | null
+    _sum: OrdersSumAggregateOutputType | null
+    _min: OrdersMinAggregateOutputType | null
+    _max: OrdersMaxAggregateOutputType | null
   }
 
-  export type ModelPSQL1AvgAggregateOutputType = {
+  export type OrdersAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type ModelPSQL1SumAggregateOutputType = {
+  export type OrdersSumAggregateOutputType = {
     id: number | null
   }
 
-  export type ModelPSQL1MinAggregateOutputType = {
-    id: number | null
-    model: string | null
-  }
-
-  export type ModelPSQL1MaxAggregateOutputType = {
+  export type OrdersMinAggregateOutputType = {
     id: number | null
     model: string | null
   }
 
-  export type ModelPSQL1CountAggregateOutputType = {
+  export type OrdersMaxAggregateOutputType = {
+    id: number | null
+    model: string | null
+  }
+
+  export type OrdersCountAggregateOutputType = {
     id: number
     model: number
     _all: number
   }
 
 
-  export type ModelPSQL1AvgAggregateInputType = {
+  export type OrdersAvgAggregateInputType = {
     id?: true
   }
 
-  export type ModelPSQL1SumAggregateInputType = {
+  export type OrdersSumAggregateInputType = {
     id?: true
   }
 
-  export type ModelPSQL1MinAggregateInputType = {
-    id?: true
-    model?: true
-  }
-
-  export type ModelPSQL1MaxAggregateInputType = {
+  export type OrdersMinAggregateInputType = {
     id?: true
     model?: true
   }
 
-  export type ModelPSQL1CountAggregateInputType = {
+  export type OrdersMaxAggregateInputType = {
+    id?: true
+    model?: true
+  }
+
+  export type OrdersCountAggregateInputType = {
     id?: true
     model?: true
     _all?: true
   }
 
-  export type ModelPSQL1AggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which ModelPSQL1 to aggregate.
+     * Filter which Orders to aggregate.
      */
-    where?: ModelPSQL1WhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ModelPSQL1s to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: ModelPSQL1OrderByWithRelationInput | ModelPSQL1OrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ModelPSQL1WhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ModelPSQL1s from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ModelPSQL1s.
+     * Skip the first `n` Orders.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned ModelPSQL1s
+     * Count returned Orders
     **/
-    _count?: true | ModelPSQL1CountAggregateInputType
+    _count?: true | OrdersCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: ModelPSQL1AvgAggregateInputType
+    _avg?: OrdersAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: ModelPSQL1SumAggregateInputType
+    _sum?: OrdersSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: ModelPSQL1MinAggregateInputType
+    _min?: OrdersMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: ModelPSQL1MaxAggregateInputType
+    _max?: OrdersMaxAggregateInputType
   }
 
-  export type GetModelPSQL1AggregateType<T extends ModelPSQL1AggregateArgs> = {
-        [P in keyof T & keyof AggregateModelPSQL1]: P extends '_count' | 'count'
+  export type GetOrdersAggregateType<T extends OrdersAggregateArgs> = {
+        [P in keyof T & keyof AggregateOrders]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateModelPSQL1[P]>
-      : GetScalarType<T[P], AggregateModelPSQL1[P]>
+        : GetScalarType<T[P], AggregateOrders[P]>
+      : GetScalarType<T[P], AggregateOrders[P]>
   }
 
 
 
 
-  export type ModelPSQL1GroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ModelPSQL1WhereInput
-    orderBy?: ModelPSQL1OrderByWithAggregationInput | ModelPSQL1OrderByWithAggregationInput[]
-    by: ModelPSQL1ScalarFieldEnum[] | ModelPSQL1ScalarFieldEnum
-    having?: ModelPSQL1ScalarWhereWithAggregatesInput
+  export type OrdersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OrdersWhereInput
+    orderBy?: OrdersOrderByWithAggregationInput | OrdersOrderByWithAggregationInput[]
+    by: OrdersScalarFieldEnum[] | OrdersScalarFieldEnum
+    having?: OrdersScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: ModelPSQL1CountAggregateInputType | true
-    _avg?: ModelPSQL1AvgAggregateInputType
-    _sum?: ModelPSQL1SumAggregateInputType
-    _min?: ModelPSQL1MinAggregateInputType
-    _max?: ModelPSQL1MaxAggregateInputType
+    _count?: OrdersCountAggregateInputType | true
+    _avg?: OrdersAvgAggregateInputType
+    _sum?: OrdersSumAggregateInputType
+    _min?: OrdersMinAggregateInputType
+    _max?: OrdersMaxAggregateInputType
   }
 
-  export type ModelPSQL1GroupByOutputType = {
+  export type OrdersGroupByOutputType = {
     id: number
     model: string
-    _count: ModelPSQL1CountAggregateOutputType | null
-    _avg: ModelPSQL1AvgAggregateOutputType | null
-    _sum: ModelPSQL1SumAggregateOutputType | null
-    _min: ModelPSQL1MinAggregateOutputType | null
-    _max: ModelPSQL1MaxAggregateOutputType | null
+    _count: OrdersCountAggregateOutputType | null
+    _avg: OrdersAvgAggregateOutputType | null
+    _sum: OrdersSumAggregateOutputType | null
+    _min: OrdersMinAggregateOutputType | null
+    _max: OrdersMaxAggregateOutputType | null
   }
 
-  type GetModelPSQL1GroupByPayload<T extends ModelPSQL1GroupByArgs> = Prisma.PrismaPromise<
+  type GetOrdersGroupByPayload<T extends OrdersGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<ModelPSQL1GroupByOutputType, T['by']> &
+      PickEnumerable<OrdersGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof ModelPSQL1GroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof OrdersGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], ModelPSQL1GroupByOutputType[P]>
-            : GetScalarType<T[P], ModelPSQL1GroupByOutputType[P]>
+              : GetScalarType<T[P], OrdersGroupByOutputType[P]>
+            : GetScalarType<T[P], OrdersGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type ModelPSQL1Select<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OrdersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     model?: boolean
-  }, ExtArgs["result"]["modelPSQL1"]>
+  }, ExtArgs["result"]["orders"]>
 
-  export type ModelPSQL1SelectScalar = {
+  export type OrdersSelectScalar = {
     id?: boolean
     model?: boolean
   }
 
 
-  export type $ModelPSQL1Payload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "ModelPSQL1"
+  export type $OrdersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Orders"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
       model: string
-    }, ExtArgs["result"]["modelPSQL1"]>
+    }, ExtArgs["result"]["orders"]>
     composites: {}
   }
 
 
-  type ModelPSQL1GetPayload<S extends boolean | null | undefined | ModelPSQL1DefaultArgs> = $Result.GetResult<Prisma.$ModelPSQL1Payload, S>
+  type OrdersGetPayload<S extends boolean | null | undefined | OrdersDefaultArgs> = $Result.GetResult<Prisma.$OrdersPayload, S>
 
-  type ModelPSQL1CountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<ModelPSQL1FindManyArgs, 'select' | 'include' | 'distinct' > & {
-      select?: ModelPSQL1CountAggregateInputType | true
+  type OrdersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<OrdersFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: OrdersCountAggregateInputType | true
     }
 
-  export interface ModelPSQL1Delegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ModelPSQL1'], meta: { name: 'ModelPSQL1' } }
+  export interface OrdersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Orders'], meta: { name: 'Orders' } }
     /**
-     * Find zero or one ModelPSQL1 that matches the filter.
-     * @param {ModelPSQL1FindUniqueArgs} args - Arguments to find a ModelPSQL1
+     * Find zero or one Orders that matches the filter.
+     * @param {OrdersFindUniqueArgs} args - Arguments to find a Orders
      * @example
-     * // Get one ModelPSQL1
-     * const modelPSQL1 = await prisma.modelPSQL1.findUnique({
+     * // Get one Orders
+     * const orders = await prisma.orders.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends ModelPSQL1FindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL1FindUniqueArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends OrdersFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, OrdersFindUniqueArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one ModelPSQL1 that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Orders that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {ModelPSQL1FindUniqueOrThrowArgs} args - Arguments to find a ModelPSQL1
+     * @param {OrdersFindUniqueOrThrowArgs} args - Arguments to find a Orders
      * @example
-     * // Get one ModelPSQL1
-     * const modelPSQL1 = await prisma.modelPSQL1.findUniqueOrThrow({
+     * // Get one Orders
+     * const orders = await prisma.orders.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends ModelPSQL1FindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL1FindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends OrdersFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, OrdersFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first ModelPSQL1 that matches the filter.
+     * Find the first Orders that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1FindFirstArgs} args - Arguments to find a ModelPSQL1
+     * @param {OrdersFindFirstArgs} args - Arguments to find a Orders
      * @example
-     * // Get one ModelPSQL1
-     * const modelPSQL1 = await prisma.modelPSQL1.findFirst({
+     * // Get one Orders
+     * const orders = await prisma.orders.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends ModelPSQL1FindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL1FindFirstArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends OrdersFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, OrdersFindFirstArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first ModelPSQL1 that matches the filter or
+     * Find the first Orders that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1FindFirstOrThrowArgs} args - Arguments to find a ModelPSQL1
+     * @param {OrdersFindFirstOrThrowArgs} args - Arguments to find a Orders
      * @example
-     * // Get one ModelPSQL1
-     * const modelPSQL1 = await prisma.modelPSQL1.findFirstOrThrow({
+     * // Get one Orders
+     * const orders = await prisma.orders.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends ModelPSQL1FindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL1FindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends OrdersFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, OrdersFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more ModelPSQL1s that matches the filter.
+     * Find zero or more Orders that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1FindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {OrdersFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all ModelPSQL1s
-     * const modelPSQL1s = await prisma.modelPSQL1.findMany()
+     * // Get all Orders
+     * const orders = await prisma.orders.findMany()
      * 
-     * // Get first 10 ModelPSQL1s
-     * const modelPSQL1s = await prisma.modelPSQL1.findMany({ take: 10 })
+     * // Get first 10 Orders
+     * const orders = await prisma.orders.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const modelPSQL1WithIdOnly = await prisma.modelPSQL1.findMany({ select: { id: true } })
+     * const ordersWithIdOnly = await prisma.orders.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends ModelPSQL1FindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL1FindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends OrdersFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, OrdersFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a ModelPSQL1.
-     * @param {ModelPSQL1CreateArgs} args - Arguments to create a ModelPSQL1.
+     * Create a Orders.
+     * @param {OrdersCreateArgs} args - Arguments to create a Orders.
      * @example
-     * // Create one ModelPSQL1
-     * const ModelPSQL1 = await prisma.modelPSQL1.create({
+     * // Create one Orders
+     * const Orders = await prisma.orders.create({
      *   data: {
-     *     // ... data to create a ModelPSQL1
+     *     // ... data to create a Orders
      *   }
      * })
      * 
     **/
-    create<T extends ModelPSQL1CreateArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL1CreateArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends OrdersCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, OrdersCreateArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many ModelPSQL1s.
-     *     @param {ModelPSQL1CreateManyArgs} args - Arguments to create many ModelPSQL1s.
+     * Create many Orders.
+     *     @param {OrdersCreateManyArgs} args - Arguments to create many Orders.
      *     @example
-     *     // Create many ModelPSQL1s
-     *     const modelPSQL1 = await prisma.modelPSQL1.createMany({
+     *     // Create many Orders
+     *     const orders = await prisma.orders.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends ModelPSQL1CreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL1CreateManyArgs<ExtArgs>>
+    createMany<T extends OrdersCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, OrdersCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a ModelPSQL1.
-     * @param {ModelPSQL1DeleteArgs} args - Arguments to delete one ModelPSQL1.
+     * Delete a Orders.
+     * @param {OrdersDeleteArgs} args - Arguments to delete one Orders.
      * @example
-     * // Delete one ModelPSQL1
-     * const ModelPSQL1 = await prisma.modelPSQL1.delete({
+     * // Delete one Orders
+     * const Orders = await prisma.orders.delete({
      *   where: {
-     *     // ... filter to delete one ModelPSQL1
+     *     // ... filter to delete one Orders
      *   }
      * })
      * 
     **/
-    delete<T extends ModelPSQL1DeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL1DeleteArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends OrdersDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, OrdersDeleteArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one ModelPSQL1.
-     * @param {ModelPSQL1UpdateArgs} args - Arguments to update one ModelPSQL1.
+     * Update one Orders.
+     * @param {OrdersUpdateArgs} args - Arguments to update one Orders.
      * @example
-     * // Update one ModelPSQL1
-     * const modelPSQL1 = await prisma.modelPSQL1.update({
+     * // Update one Orders
+     * const orders = await prisma.orders.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1207,34 +1207,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends ModelPSQL1UpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL1UpdateArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends OrdersUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, OrdersUpdateArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more ModelPSQL1s.
-     * @param {ModelPSQL1DeleteManyArgs} args - Arguments to filter ModelPSQL1s to delete.
+     * Delete zero or more Orders.
+     * @param {OrdersDeleteManyArgs} args - Arguments to filter Orders to delete.
      * @example
-     * // Delete a few ModelPSQL1s
-     * const { count } = await prisma.modelPSQL1.deleteMany({
+     * // Delete a few Orders
+     * const { count } = await prisma.orders.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends ModelPSQL1DeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL1DeleteManyArgs<ExtArgs>>
+    deleteMany<T extends OrdersDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, OrdersDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more ModelPSQL1s.
+     * Update zero or more Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1UpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {OrdersUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many ModelPSQL1s
-     * const modelPSQL1 = await prisma.modelPSQL1.updateMany({
+     * // Update many Orders
+     * const orders = await prisma.orders.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1244,59 +1244,59 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends ModelPSQL1UpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL1UpdateManyArgs<ExtArgs>>
+    updateMany<T extends OrdersUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, OrdersUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one ModelPSQL1.
-     * @param {ModelPSQL1UpsertArgs} args - Arguments to update or create a ModelPSQL1.
+     * Create or update one Orders.
+     * @param {OrdersUpsertArgs} args - Arguments to update or create a Orders.
      * @example
-     * // Update or create a ModelPSQL1
-     * const modelPSQL1 = await prisma.modelPSQL1.upsert({
+     * // Update or create a Orders
+     * const orders = await prisma.orders.upsert({
      *   create: {
-     *     // ... data to create a ModelPSQL1
+     *     // ... data to create a Orders
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the ModelPSQL1 we want to update
+     *     // ... the filter for the Orders we want to update
      *   }
      * })
     **/
-    upsert<T extends ModelPSQL1UpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL1UpsertArgs<ExtArgs>>
-    ): Prisma__ModelPSQL1Client<$Result.GetResult<Prisma.$ModelPSQL1Payload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends OrdersUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, OrdersUpsertArgs<ExtArgs>>
+    ): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Count the number of ModelPSQL1s.
+     * Count the number of Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1CountArgs} args - Arguments to filter ModelPSQL1s to count.
+     * @param {OrdersCountArgs} args - Arguments to filter Orders to count.
      * @example
-     * // Count the number of ModelPSQL1s
-     * const count = await prisma.modelPSQL1.count({
+     * // Count the number of Orders
+     * const count = await prisma.orders.count({
      *   where: {
-     *     // ... the filter for the ModelPSQL1s we want to count
+     *     // ... the filter for the Orders we want to count
      *   }
      * })
     **/
-    count<T extends ModelPSQL1CountArgs>(
-      args?: Subset<T, ModelPSQL1CountArgs>,
+    count<T extends OrdersCountArgs>(
+      args?: Subset<T, OrdersCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], ModelPSQL1CountAggregateOutputType>
+          : GetScalarType<T['select'], OrdersCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a ModelPSQL1.
+     * Allows you to perform aggregations operations on a Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1AggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {OrdersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1316,13 +1316,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends ModelPSQL1AggregateArgs>(args: Subset<T, ModelPSQL1AggregateArgs>): Prisma.PrismaPromise<GetModelPSQL1AggregateType<T>>
+    aggregate<T extends OrdersAggregateArgs>(args: Subset<T, OrdersAggregateArgs>): Prisma.PrismaPromise<GetOrdersAggregateType<T>>
 
     /**
-     * Group by ModelPSQL1.
+     * Group by Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL1GroupByArgs} args - Group by arguments.
+     * @param {OrdersGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1337,14 +1337,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ModelPSQL1GroupByArgs,
+      T extends OrdersGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ModelPSQL1GroupByArgs['orderBy'] }
-        : { orderBy?: ModelPSQL1GroupByArgs['orderBy'] },
+        ? { orderBy: OrdersGroupByArgs['orderBy'] }
+        : { orderBy?: OrdersGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1393,20 +1393,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ModelPSQL1GroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetModelPSQL1GroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, OrdersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOrdersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the ModelPSQL1 model
+   * Fields of the Orders model
    */
-  readonly fields: ModelPSQL1FieldRefs;
+  readonly fields: OrdersFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for ModelPSQL1.
+   * The delegate class that acts as a "Promise-like" for Orders.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ModelPSQL1Client<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__OrdersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -1435,294 +1435,294 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the ModelPSQL1 model
+   * Fields of the Orders model
    */ 
-  interface ModelPSQL1FieldRefs {
-    readonly id: FieldRef<"ModelPSQL1", 'Int'>
-    readonly model: FieldRef<"ModelPSQL1", 'String'>
+  interface OrdersFieldRefs {
+    readonly id: FieldRef<"Orders", 'Int'>
+    readonly model: FieldRef<"Orders", 'String'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * ModelPSQL1 findUnique
+   * Orders findUnique
    */
-  export type ModelPSQL1FindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Filter, which ModelPSQL1 to fetch.
+     * Filter, which Orders to fetch.
      */
-    where: ModelPSQL1WhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
 
   /**
-   * ModelPSQL1 findUniqueOrThrow
+   * Orders findUniqueOrThrow
    */
-  export type ModelPSQL1FindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Filter, which ModelPSQL1 to fetch.
+     * Filter, which Orders to fetch.
      */
-    where: ModelPSQL1WhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
 
   /**
-   * ModelPSQL1 findFirst
+   * Orders findFirst
    */
-  export type ModelPSQL1FindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Filter, which ModelPSQL1 to fetch.
+     * Filter, which Orders to fetch.
      */
-    where?: ModelPSQL1WhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ModelPSQL1s to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: ModelPSQL1OrderByWithRelationInput | ModelPSQL1OrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for ModelPSQL1s.
+     * Sets the position for searching for Orders.
      */
-    cursor?: ModelPSQL1WhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ModelPSQL1s from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ModelPSQL1s.
+     * Skip the first `n` Orders.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of ModelPSQL1s.
+     * Filter by unique combinations of Orders.
      */
-    distinct?: ModelPSQL1ScalarFieldEnum | ModelPSQL1ScalarFieldEnum[]
+    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
   }
 
 
   /**
-   * ModelPSQL1 findFirstOrThrow
+   * Orders findFirstOrThrow
    */
-  export type ModelPSQL1FindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Filter, which ModelPSQL1 to fetch.
+     * Filter, which Orders to fetch.
      */
-    where?: ModelPSQL1WhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ModelPSQL1s to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: ModelPSQL1OrderByWithRelationInput | ModelPSQL1OrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for ModelPSQL1s.
+     * Sets the position for searching for Orders.
      */
-    cursor?: ModelPSQL1WhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ModelPSQL1s from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ModelPSQL1s.
+     * Skip the first `n` Orders.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of ModelPSQL1s.
+     * Filter by unique combinations of Orders.
      */
-    distinct?: ModelPSQL1ScalarFieldEnum | ModelPSQL1ScalarFieldEnum[]
+    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
   }
 
 
   /**
-   * ModelPSQL1 findMany
+   * Orders findMany
    */
-  export type ModelPSQL1FindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Filter, which ModelPSQL1s to fetch.
+     * Filter, which Orders to fetch.
      */
-    where?: ModelPSQL1WhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ModelPSQL1s to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: ModelPSQL1OrderByWithRelationInput | ModelPSQL1OrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing ModelPSQL1s.
+     * Sets the position for listing Orders.
      */
-    cursor?: ModelPSQL1WhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ModelPSQL1s from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ModelPSQL1s.
+     * Skip the first `n` Orders.
      */
     skip?: number
-    distinct?: ModelPSQL1ScalarFieldEnum | ModelPSQL1ScalarFieldEnum[]
+    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
   }
 
 
   /**
-   * ModelPSQL1 create
+   * Orders create
    */
-  export type ModelPSQL1CreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * The data needed to create a ModelPSQL1.
+     * The data needed to create a Orders.
      */
-    data: XOR<ModelPSQL1CreateInput, ModelPSQL1UncheckedCreateInput>
+    data: XOR<OrdersCreateInput, OrdersUncheckedCreateInput>
   }
 
 
   /**
-   * ModelPSQL1 createMany
+   * Orders createMany
    */
-  export type ModelPSQL1CreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many ModelPSQL1s.
+     * The data used to create many Orders.
      */
-    data: ModelPSQL1CreateManyInput | ModelPSQL1CreateManyInput[]
+    data: OrdersCreateManyInput | OrdersCreateManyInput[]
     skipDuplicates?: boolean
   }
 
 
   /**
-   * ModelPSQL1 update
+   * Orders update
    */
-  export type ModelPSQL1UpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * The data needed to update a ModelPSQL1.
+     * The data needed to update a Orders.
      */
-    data: XOR<ModelPSQL1UpdateInput, ModelPSQL1UncheckedUpdateInput>
+    data: XOR<OrdersUpdateInput, OrdersUncheckedUpdateInput>
     /**
-     * Choose, which ModelPSQL1 to update.
+     * Choose, which Orders to update.
      */
-    where: ModelPSQL1WhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
 
   /**
-   * ModelPSQL1 updateMany
+   * Orders updateMany
    */
-  export type ModelPSQL1UpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update ModelPSQL1s.
+     * The data used to update Orders.
      */
-    data: XOR<ModelPSQL1UpdateManyMutationInput, ModelPSQL1UncheckedUpdateManyInput>
+    data: XOR<OrdersUpdateManyMutationInput, OrdersUncheckedUpdateManyInput>
     /**
-     * Filter which ModelPSQL1s to update
+     * Filter which Orders to update
      */
-    where?: ModelPSQL1WhereInput
+    where?: OrdersWhereInput
   }
 
 
   /**
-   * ModelPSQL1 upsert
+   * Orders upsert
    */
-  export type ModelPSQL1UpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * The filter to search for the ModelPSQL1 to update in case it exists.
+     * The filter to search for the Orders to update in case it exists.
      */
-    where: ModelPSQL1WhereUniqueInput
+    where: OrdersWhereUniqueInput
     /**
-     * In case the ModelPSQL1 found by the `where` argument doesn't exist, create a new ModelPSQL1 with this data.
+     * In case the Orders found by the `where` argument doesn't exist, create a new Orders with this data.
      */
-    create: XOR<ModelPSQL1CreateInput, ModelPSQL1UncheckedCreateInput>
+    create: XOR<OrdersCreateInput, OrdersUncheckedCreateInput>
     /**
-     * In case the ModelPSQL1 was found with the provided `where` argument, update it with this data.
+     * In case the Orders was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ModelPSQL1UpdateInput, ModelPSQL1UncheckedUpdateInput>
+    update: XOR<OrdersUpdateInput, OrdersUncheckedUpdateInput>
   }
 
 
   /**
-   * ModelPSQL1 delete
+   * Orders delete
    */
-  export type ModelPSQL1DeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Filter which ModelPSQL1 to delete.
+     * Filter which Orders to delete.
      */
-    where: ModelPSQL1WhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
 
   /**
-   * ModelPSQL1 deleteMany
+   * Orders deleteMany
    */
-  export type ModelPSQL1DeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which ModelPSQL1s to delete
+     * Filter which Orders to delete
      */
-    where?: ModelPSQL1WhereInput
+    where?: OrdersWhereInput
   }
 
 
   /**
-   * ModelPSQL1 without action
+   * Orders without action
    */
-  export type ModelPSQL1DefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ModelPSQL1
+     * Select specific fields to fetch from the Orders
      */
-    select?: ModelPSQL1Select<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
   }
 
 
@@ -1741,12 +1741,12 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const ModelPSQL1ScalarFieldEnum: {
+  export const OrdersScalarFieldEnum: {
     id: 'id',
     model: 'model'
   };
 
-  export type ModelPSQL1ScalarFieldEnum = (typeof ModelPSQL1ScalarFieldEnum)[keyof typeof ModelPSQL1ScalarFieldEnum]
+  export type OrdersScalarFieldEnum = (typeof OrdersScalarFieldEnum)[keyof typeof OrdersScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -1815,73 +1815,73 @@ export namespace Prisma {
    */
 
 
-  export type ModelPSQL1WhereInput = {
-    AND?: ModelPSQL1WhereInput | ModelPSQL1WhereInput[]
-    OR?: ModelPSQL1WhereInput[]
-    NOT?: ModelPSQL1WhereInput | ModelPSQL1WhereInput[]
-    id?: IntFilter<"ModelPSQL1"> | number
-    model?: StringFilter<"ModelPSQL1"> | string
+  export type OrdersWhereInput = {
+    AND?: OrdersWhereInput | OrdersWhereInput[]
+    OR?: OrdersWhereInput[]
+    NOT?: OrdersWhereInput | OrdersWhereInput[]
+    id?: IntFilter<"Orders"> | number
+    model?: StringFilter<"Orders"> | string
   }
 
-  export type ModelPSQL1OrderByWithRelationInput = {
+  export type OrdersOrderByWithRelationInput = {
     id?: SortOrder
     model?: SortOrder
   }
 
-  export type ModelPSQL1WhereUniqueInput = Prisma.AtLeast<{
+  export type OrdersWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: ModelPSQL1WhereInput | ModelPSQL1WhereInput[]
-    OR?: ModelPSQL1WhereInput[]
-    NOT?: ModelPSQL1WhereInput | ModelPSQL1WhereInput[]
-    model?: StringFilter<"ModelPSQL1"> | string
+    AND?: OrdersWhereInput | OrdersWhereInput[]
+    OR?: OrdersWhereInput[]
+    NOT?: OrdersWhereInput | OrdersWhereInput[]
+    model?: StringFilter<"Orders"> | string
   }, "id">
 
-  export type ModelPSQL1OrderByWithAggregationInput = {
+  export type OrdersOrderByWithAggregationInput = {
     id?: SortOrder
     model?: SortOrder
-    _count?: ModelPSQL1CountOrderByAggregateInput
-    _avg?: ModelPSQL1AvgOrderByAggregateInput
-    _max?: ModelPSQL1MaxOrderByAggregateInput
-    _min?: ModelPSQL1MinOrderByAggregateInput
-    _sum?: ModelPSQL1SumOrderByAggregateInput
+    _count?: OrdersCountOrderByAggregateInput
+    _avg?: OrdersAvgOrderByAggregateInput
+    _max?: OrdersMaxOrderByAggregateInput
+    _min?: OrdersMinOrderByAggregateInput
+    _sum?: OrdersSumOrderByAggregateInput
   }
 
-  export type ModelPSQL1ScalarWhereWithAggregatesInput = {
-    AND?: ModelPSQL1ScalarWhereWithAggregatesInput | ModelPSQL1ScalarWhereWithAggregatesInput[]
-    OR?: ModelPSQL1ScalarWhereWithAggregatesInput[]
-    NOT?: ModelPSQL1ScalarWhereWithAggregatesInput | ModelPSQL1ScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"ModelPSQL1"> | number
-    model?: StringWithAggregatesFilter<"ModelPSQL1"> | string
+  export type OrdersScalarWhereWithAggregatesInput = {
+    AND?: OrdersScalarWhereWithAggregatesInput | OrdersScalarWhereWithAggregatesInput[]
+    OR?: OrdersScalarWhereWithAggregatesInput[]
+    NOT?: OrdersScalarWhereWithAggregatesInput | OrdersScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Orders"> | number
+    model?: StringWithAggregatesFilter<"Orders"> | string
   }
 
-  export type ModelPSQL1CreateInput = {
+  export type OrdersCreateInput = {
     model: string
   }
 
-  export type ModelPSQL1UncheckedCreateInput = {
+  export type OrdersUncheckedCreateInput = {
     id?: number
     model: string
   }
 
-  export type ModelPSQL1UpdateInput = {
+  export type OrdersUpdateInput = {
     model?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ModelPSQL1UncheckedUpdateInput = {
+  export type OrdersUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     model?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ModelPSQL1CreateManyInput = {
+  export type OrdersCreateManyInput = {
     id?: number
     model: string
   }
 
-  export type ModelPSQL1UpdateManyMutationInput = {
+  export type OrdersUpdateManyMutationInput = {
     model?: StringFieldUpdateOperationsInput | string
   }
 
-  export type ModelPSQL1UncheckedUpdateManyInput = {
+  export type OrdersUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     model?: StringFieldUpdateOperationsInput | string
   }
@@ -1912,26 +1912,26 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type ModelPSQL1CountOrderByAggregateInput = {
+  export type OrdersCountOrderByAggregateInput = {
     id?: SortOrder
     model?: SortOrder
   }
 
-  export type ModelPSQL1AvgOrderByAggregateInput = {
+  export type OrdersAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type ModelPSQL1MaxOrderByAggregateInput = {
-    id?: SortOrder
-    model?: SortOrder
-  }
-
-  export type ModelPSQL1MinOrderByAggregateInput = {
+  export type OrdersMaxOrderByAggregateInput = {
     id?: SortOrder
     model?: SortOrder
   }
 
-  export type ModelPSQL1SumOrderByAggregateInput = {
+  export type OrdersMinOrderByAggregateInput = {
+    id?: SortOrder
+    model?: SortOrder
+  }
+
+  export type OrdersSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -2056,9 +2056,9 @@ export namespace Prisma {
    * Aliases for legacy arg types
    */
     /**
-     * @deprecated Use ModelPSQL1DefaultArgs instead
+     * @deprecated Use OrdersDefaultArgs instead
      */
-    export type ModelPSQL1Args<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ModelPSQL1DefaultArgs<ExtArgs>
+    export type OrdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = OrdersDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

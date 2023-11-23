@@ -1,13 +1,13 @@
 import fastify from 'fastify'
-import { PrismaClient as PrismaClient1 } from '../prisma/generated/client1'
-import { PrismaClient as PrismaClient2 } from '../prisma/generated/client2'
+import { PrismaClient as OrderClientPrisma } from '../prisma/generated/order_client'
+import { PrismaClient as AuthClientPrisma } from '../prisma/generated/auth_client'
 
 
 const server = fastify()
 
 server.get('/example', async (request, reply) => {
-    const res1 = await new PrismaClient1().modelPSQL1.findMany();
-    const res2 = await new PrismaClient2().modelPSQL2.findMany();
+    const res1 = await new OrderClientPrisma().orders.findMany();
+    const res2 = await new AuthClientPrisma().user.findMany();
 
     return {"PSQL1": res1, "PSQL2": res2}
 })

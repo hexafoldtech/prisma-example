@@ -1,5 +1,6 @@
-import { PrismaClient as PrismaClient2 } from '../prisma/generated/client2'
+import { Post, PrismaClient as PrismaClient2 } from '../prisma/generated/client2'
 import { parseArgs } from 'node:util'
+
 
 const prisma = new PrismaClient2()
 const options = {
@@ -7,21 +8,8 @@ const options = {
 } as const
 
 
-const posts = [
-  {
-    title: 'Follow Prisma on Twitter',
-    content: 'https://twitter.com/prisma',
-    published: true,
-  },
-  {
-    title: 'Follow Nexus on Twitter',
-    content: 'https://twitter.com/nexusgql',
-    published: true,
-  },
-]
 
-
-async function main() {
+async function seedData() {
     const {
         values: { environment },
     } = parseArgs({ options })
@@ -29,29 +17,37 @@ async function main() {
       switch (environment) {
         case 'development':
           /** data for your development */
-          const alice = await prisma.user.upsert({
-            where: { email: 'alice@prisma.io' },
-            update: {},
-            create: {
-              email: 'alice@prisma.io',
-              name: 'Alice',
-              posts: {
-                create: posts,
+          // Create users
+            const user1 = await prisma.user.create({
+              data: {
+                email: 'user1@gmail.com',
+                name: "user1",
               },
-            },
-          })
-          const bob = await prisma.user.upsert({
-            where: { email: 'bob@prisma.io' },
-            update: {},
-            create: {
-              email: 'bob@prisma.io',
-              name: 'Bob',
-              posts: {
-                create: posts,
+            });
+
+            const user2 = await prisma.user.create({
+              data: {
+                email: 'user2@gmail.com',
+                name: "user2",
               },
-            },
-          })
-          console.log({ alice, bob })
+            });
+
+          await prisma.post.createMany({
+            data: [
+              {
+                title: 'Post 1',
+                content: 'Content 1',
+                userId: user1.id,
+                published: true
+              },
+              {
+                title: 'Post 2',
+                content: 'Content 2',
+                userId: user2.id,
+                published: true
+              }
+            ],
+          });
           break
         case 'test':
           /** data for your test environment */
@@ -61,7 +57,7 @@ async function main() {
       }
   
 }
-main()
+seedData()
   .then(async () => {
     await prisma.$disconnect()
   })

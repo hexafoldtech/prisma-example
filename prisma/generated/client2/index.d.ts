@@ -14,11 +14,6 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model ModelPSQL2
- * 
- */
-export type ModelPSQL2 = $Result.DefaultSelection<Prisma.$ModelPSQL2Payload>
-/**
  * Model User
  * 
  */
@@ -36,8 +31,8 @@ export type Post = $Result.DefaultSelection<Prisma.$PostPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more ModelPSQL2s
- * const modelPSQL2s = await prisma.modelPSQL2.findMany()
+ * // Fetch zero or more Users
+ * const users = await prisma.user.findMany()
  * ```
  *
  * 
@@ -57,8 +52,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more ModelPSQL2s
-   * const modelPSQL2s = await prisma.modelPSQL2.findMany()
+   * // Fetch zero or more Users
+   * const users = await prisma.user.findMany()
    * ```
    *
    * 
@@ -152,16 +147,6 @@ export class PrismaClient<
   $extends: $Extensions.ExtendsHook<'extends', Prisma.TypeMapCb, ExtArgs>
 
       /**
-   * `prisma.modelPSQL2`: Exposes CRUD operations for the **ModelPSQL2** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more ModelPSQL2s
-    * const modelPSQL2s = await prisma.modelPSQL2.findMany()
-    * ```
-    */
-  get modelPSQL2(): Prisma.ModelPSQL2Delegate<ExtArgs>;
-
-  /**
    * `prisma.user`: Exposes CRUD operations for the **User** model.
     * Example usage:
     * ```ts
@@ -650,7 +635,6 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    ModelPSQL2: 'ModelPSQL2',
     User: 'User',
     Post: 'Post'
   };
@@ -669,76 +653,10 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'modelPSQL2' | 'user' | 'post'
+      modelProps: 'user' | 'post'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
-      ModelPSQL2: {
-        payload: Prisma.$ModelPSQL2Payload<ExtArgs>
-        fields: Prisma.ModelPSQL2FieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.ModelPSQL2FindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.ModelPSQL2FindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>
-          }
-          findFirst: {
-            args: Prisma.ModelPSQL2FindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.ModelPSQL2FindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>
-          }
-          findMany: {
-            args: Prisma.ModelPSQL2FindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>[]
-          }
-          create: {
-            args: Prisma.ModelPSQL2CreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>
-          }
-          createMany: {
-            args: Prisma.ModelPSQL2CreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.ModelPSQL2DeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>
-          }
-          update: {
-            args: Prisma.ModelPSQL2UpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>
-          }
-          deleteMany: {
-            args: Prisma.ModelPSQL2DeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.ModelPSQL2UpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.ModelPSQL2UpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$ModelPSQL2Payload>
-          }
-          aggregate: {
-            args: Prisma.ModelPSQL2AggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateModelPSQL2>
-          }
-          groupBy: {
-            args: Prisma.ModelPSQL2GroupByArgs<ExtArgs>,
-            result: $Utils.Optional<ModelPSQL2GroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.ModelPSQL2CountArgs<ExtArgs>,
-            result: $Utils.Optional<ModelPSQL2CountAggregateOutputType> | number
-          }
-        }
-      }
       User: {
         payload: Prisma.$UserPayload<ExtArgs>
         fields: Prisma.UserFieldRefs
@@ -1052,877 +970,6 @@ export namespace Prisma {
   /**
    * Models
    */
-
-  /**
-   * Model ModelPSQL2
-   */
-
-  export type AggregateModelPSQL2 = {
-    _count: ModelPSQL2CountAggregateOutputType | null
-    _avg: ModelPSQL2AvgAggregateOutputType | null
-    _sum: ModelPSQL2SumAggregateOutputType | null
-    _min: ModelPSQL2MinAggregateOutputType | null
-    _max: ModelPSQL2MaxAggregateOutputType | null
-  }
-
-  export type ModelPSQL2AvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type ModelPSQL2SumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type ModelPSQL2MinAggregateOutputType = {
-    id: number | null
-    model: string | null
-  }
-
-  export type ModelPSQL2MaxAggregateOutputType = {
-    id: number | null
-    model: string | null
-  }
-
-  export type ModelPSQL2CountAggregateOutputType = {
-    id: number
-    model: number
-    _all: number
-  }
-
-
-  export type ModelPSQL2AvgAggregateInputType = {
-    id?: true
-  }
-
-  export type ModelPSQL2SumAggregateInputType = {
-    id?: true
-  }
-
-  export type ModelPSQL2MinAggregateInputType = {
-    id?: true
-    model?: true
-  }
-
-  export type ModelPSQL2MaxAggregateInputType = {
-    id?: true
-    model?: true
-  }
-
-  export type ModelPSQL2CountAggregateInputType = {
-    id?: true
-    model?: true
-    _all?: true
-  }
-
-  export type ModelPSQL2AggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ModelPSQL2 to aggregate.
-     */
-    where?: ModelPSQL2WhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ModelPSQL2s to fetch.
-     */
-    orderBy?: ModelPSQL2OrderByWithRelationInput | ModelPSQL2OrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: ModelPSQL2WhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ModelPSQL2s from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ModelPSQL2s.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned ModelPSQL2s
-    **/
-    _count?: true | ModelPSQL2CountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: ModelPSQL2AvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ModelPSQL2SumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ModelPSQL2MinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ModelPSQL2MaxAggregateInputType
-  }
-
-  export type GetModelPSQL2AggregateType<T extends ModelPSQL2AggregateArgs> = {
-        [P in keyof T & keyof AggregateModelPSQL2]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateModelPSQL2[P]>
-      : GetScalarType<T[P], AggregateModelPSQL2[P]>
-  }
-
-
-
-
-  export type ModelPSQL2GroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ModelPSQL2WhereInput
-    orderBy?: ModelPSQL2OrderByWithAggregationInput | ModelPSQL2OrderByWithAggregationInput[]
-    by: ModelPSQL2ScalarFieldEnum[] | ModelPSQL2ScalarFieldEnum
-    having?: ModelPSQL2ScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ModelPSQL2CountAggregateInputType | true
-    _avg?: ModelPSQL2AvgAggregateInputType
-    _sum?: ModelPSQL2SumAggregateInputType
-    _min?: ModelPSQL2MinAggregateInputType
-    _max?: ModelPSQL2MaxAggregateInputType
-  }
-
-  export type ModelPSQL2GroupByOutputType = {
-    id: number
-    model: string
-    _count: ModelPSQL2CountAggregateOutputType | null
-    _avg: ModelPSQL2AvgAggregateOutputType | null
-    _sum: ModelPSQL2SumAggregateOutputType | null
-    _min: ModelPSQL2MinAggregateOutputType | null
-    _max: ModelPSQL2MaxAggregateOutputType | null
-  }
-
-  type GetModelPSQL2GroupByPayload<T extends ModelPSQL2GroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ModelPSQL2GroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ModelPSQL2GroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ModelPSQL2GroupByOutputType[P]>
-            : GetScalarType<T[P], ModelPSQL2GroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type ModelPSQL2Select<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    model?: boolean
-  }, ExtArgs["result"]["modelPSQL2"]>
-
-  export type ModelPSQL2SelectScalar = {
-    id?: boolean
-    model?: boolean
-  }
-
-
-  export type $ModelPSQL2Payload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "ModelPSQL2"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      model: string
-    }, ExtArgs["result"]["modelPSQL2"]>
-    composites: {}
-  }
-
-
-  type ModelPSQL2GetPayload<S extends boolean | null | undefined | ModelPSQL2DefaultArgs> = $Result.GetResult<Prisma.$ModelPSQL2Payload, S>
-
-  type ModelPSQL2CountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<ModelPSQL2FindManyArgs, 'select' | 'include' | 'distinct' > & {
-      select?: ModelPSQL2CountAggregateInputType | true
-    }
-
-  export interface ModelPSQL2Delegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ModelPSQL2'], meta: { name: 'ModelPSQL2' } }
-    /**
-     * Find zero or one ModelPSQL2 that matches the filter.
-     * @param {ModelPSQL2FindUniqueArgs} args - Arguments to find a ModelPSQL2
-     * @example
-     * // Get one ModelPSQL2
-     * const modelPSQL2 = await prisma.modelPSQL2.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends ModelPSQL2FindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL2FindUniqueArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one ModelPSQL2 that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {ModelPSQL2FindUniqueOrThrowArgs} args - Arguments to find a ModelPSQL2
-     * @example
-     * // Get one ModelPSQL2
-     * const modelPSQL2 = await prisma.modelPSQL2.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends ModelPSQL2FindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL2FindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first ModelPSQL2 that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2FindFirstArgs} args - Arguments to find a ModelPSQL2
-     * @example
-     * // Get one ModelPSQL2
-     * const modelPSQL2 = await prisma.modelPSQL2.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends ModelPSQL2FindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL2FindFirstArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first ModelPSQL2 that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2FindFirstOrThrowArgs} args - Arguments to find a ModelPSQL2
-     * @example
-     * // Get one ModelPSQL2
-     * const modelPSQL2 = await prisma.modelPSQL2.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends ModelPSQL2FindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL2FindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more ModelPSQL2s that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2FindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all ModelPSQL2s
-     * const modelPSQL2s = await prisma.modelPSQL2.findMany()
-     * 
-     * // Get first 10 ModelPSQL2s
-     * const modelPSQL2s = await prisma.modelPSQL2.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const modelPSQL2WithIdOnly = await prisma.modelPSQL2.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends ModelPSQL2FindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL2FindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a ModelPSQL2.
-     * @param {ModelPSQL2CreateArgs} args - Arguments to create a ModelPSQL2.
-     * @example
-     * // Create one ModelPSQL2
-     * const ModelPSQL2 = await prisma.modelPSQL2.create({
-     *   data: {
-     *     // ... data to create a ModelPSQL2
-     *   }
-     * })
-     * 
-    **/
-    create<T extends ModelPSQL2CreateArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL2CreateArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many ModelPSQL2s.
-     *     @param {ModelPSQL2CreateManyArgs} args - Arguments to create many ModelPSQL2s.
-     *     @example
-     *     // Create many ModelPSQL2s
-     *     const modelPSQL2 = await prisma.modelPSQL2.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends ModelPSQL2CreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL2CreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a ModelPSQL2.
-     * @param {ModelPSQL2DeleteArgs} args - Arguments to delete one ModelPSQL2.
-     * @example
-     * // Delete one ModelPSQL2
-     * const ModelPSQL2 = await prisma.modelPSQL2.delete({
-     *   where: {
-     *     // ... filter to delete one ModelPSQL2
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends ModelPSQL2DeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL2DeleteArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one ModelPSQL2.
-     * @param {ModelPSQL2UpdateArgs} args - Arguments to update one ModelPSQL2.
-     * @example
-     * // Update one ModelPSQL2
-     * const modelPSQL2 = await prisma.modelPSQL2.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends ModelPSQL2UpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL2UpdateArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more ModelPSQL2s.
-     * @param {ModelPSQL2DeleteManyArgs} args - Arguments to filter ModelPSQL2s to delete.
-     * @example
-     * // Delete a few ModelPSQL2s
-     * const { count } = await prisma.modelPSQL2.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends ModelPSQL2DeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ModelPSQL2DeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more ModelPSQL2s.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2UpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many ModelPSQL2s
-     * const modelPSQL2 = await prisma.modelPSQL2.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends ModelPSQL2UpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL2UpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one ModelPSQL2.
-     * @param {ModelPSQL2UpsertArgs} args - Arguments to update or create a ModelPSQL2.
-     * @example
-     * // Update or create a ModelPSQL2
-     * const modelPSQL2 = await prisma.modelPSQL2.upsert({
-     *   create: {
-     *     // ... data to create a ModelPSQL2
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the ModelPSQL2 we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends ModelPSQL2UpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, ModelPSQL2UpsertArgs<ExtArgs>>
-    ): Prisma__ModelPSQL2Client<$Result.GetResult<Prisma.$ModelPSQL2Payload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Count the number of ModelPSQL2s.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2CountArgs} args - Arguments to filter ModelPSQL2s to count.
-     * @example
-     * // Count the number of ModelPSQL2s
-     * const count = await prisma.modelPSQL2.count({
-     *   where: {
-     *     // ... the filter for the ModelPSQL2s we want to count
-     *   }
-     * })
-    **/
-    count<T extends ModelPSQL2CountArgs>(
-      args?: Subset<T, ModelPSQL2CountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ModelPSQL2CountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a ModelPSQL2.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2AggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ModelPSQL2AggregateArgs>(args: Subset<T, ModelPSQL2AggregateArgs>): Prisma.PrismaPromise<GetModelPSQL2AggregateType<T>>
-
-    /**
-     * Group by ModelPSQL2.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ModelPSQL2GroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends ModelPSQL2GroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ModelPSQL2GroupByArgs['orderBy'] }
-        : { orderBy?: ModelPSQL2GroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, ModelPSQL2GroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetModelPSQL2GroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the ModelPSQL2 model
-   */
-  readonly fields: ModelPSQL2FieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for ModelPSQL2.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__ModelPSQL2Client<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the ModelPSQL2 model
-   */ 
-  interface ModelPSQL2FieldRefs {
-    readonly id: FieldRef<"ModelPSQL2", 'Int'>
-    readonly model: FieldRef<"ModelPSQL2", 'String'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * ModelPSQL2 findUnique
-   */
-  export type ModelPSQL2FindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * Filter, which ModelPSQL2 to fetch.
-     */
-    where: ModelPSQL2WhereUniqueInput
-  }
-
-
-  /**
-   * ModelPSQL2 findUniqueOrThrow
-   */
-  export type ModelPSQL2FindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * Filter, which ModelPSQL2 to fetch.
-     */
-    where: ModelPSQL2WhereUniqueInput
-  }
-
-
-  /**
-   * ModelPSQL2 findFirst
-   */
-  export type ModelPSQL2FindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * Filter, which ModelPSQL2 to fetch.
-     */
-    where?: ModelPSQL2WhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ModelPSQL2s to fetch.
-     */
-    orderBy?: ModelPSQL2OrderByWithRelationInput | ModelPSQL2OrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for ModelPSQL2s.
-     */
-    cursor?: ModelPSQL2WhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ModelPSQL2s from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ModelPSQL2s.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of ModelPSQL2s.
-     */
-    distinct?: ModelPSQL2ScalarFieldEnum | ModelPSQL2ScalarFieldEnum[]
-  }
-
-
-  /**
-   * ModelPSQL2 findFirstOrThrow
-   */
-  export type ModelPSQL2FindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * Filter, which ModelPSQL2 to fetch.
-     */
-    where?: ModelPSQL2WhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ModelPSQL2s to fetch.
-     */
-    orderBy?: ModelPSQL2OrderByWithRelationInput | ModelPSQL2OrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for ModelPSQL2s.
-     */
-    cursor?: ModelPSQL2WhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ModelPSQL2s from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ModelPSQL2s.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of ModelPSQL2s.
-     */
-    distinct?: ModelPSQL2ScalarFieldEnum | ModelPSQL2ScalarFieldEnum[]
-  }
-
-
-  /**
-   * ModelPSQL2 findMany
-   */
-  export type ModelPSQL2FindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * Filter, which ModelPSQL2s to fetch.
-     */
-    where?: ModelPSQL2WhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ModelPSQL2s to fetch.
-     */
-    orderBy?: ModelPSQL2OrderByWithRelationInput | ModelPSQL2OrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing ModelPSQL2s.
-     */
-    cursor?: ModelPSQL2WhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ModelPSQL2s from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ModelPSQL2s.
-     */
-    skip?: number
-    distinct?: ModelPSQL2ScalarFieldEnum | ModelPSQL2ScalarFieldEnum[]
-  }
-
-
-  /**
-   * ModelPSQL2 create
-   */
-  export type ModelPSQL2CreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * The data needed to create a ModelPSQL2.
-     */
-    data: XOR<ModelPSQL2CreateInput, ModelPSQL2UncheckedCreateInput>
-  }
-
-
-  /**
-   * ModelPSQL2 createMany
-   */
-  export type ModelPSQL2CreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many ModelPSQL2s.
-     */
-    data: ModelPSQL2CreateManyInput | ModelPSQL2CreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-
-  /**
-   * ModelPSQL2 update
-   */
-  export type ModelPSQL2UpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * The data needed to update a ModelPSQL2.
-     */
-    data: XOR<ModelPSQL2UpdateInput, ModelPSQL2UncheckedUpdateInput>
-    /**
-     * Choose, which ModelPSQL2 to update.
-     */
-    where: ModelPSQL2WhereUniqueInput
-  }
-
-
-  /**
-   * ModelPSQL2 updateMany
-   */
-  export type ModelPSQL2UpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update ModelPSQL2s.
-     */
-    data: XOR<ModelPSQL2UpdateManyMutationInput, ModelPSQL2UncheckedUpdateManyInput>
-    /**
-     * Filter which ModelPSQL2s to update
-     */
-    where?: ModelPSQL2WhereInput
-  }
-
-
-  /**
-   * ModelPSQL2 upsert
-   */
-  export type ModelPSQL2UpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * The filter to search for the ModelPSQL2 to update in case it exists.
-     */
-    where: ModelPSQL2WhereUniqueInput
-    /**
-     * In case the ModelPSQL2 found by the `where` argument doesn't exist, create a new ModelPSQL2 with this data.
-     */
-    create: XOR<ModelPSQL2CreateInput, ModelPSQL2UncheckedCreateInput>
-    /**
-     * In case the ModelPSQL2 was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ModelPSQL2UpdateInput, ModelPSQL2UncheckedUpdateInput>
-  }
-
-
-  /**
-   * ModelPSQL2 delete
-   */
-  export type ModelPSQL2DeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-    /**
-     * Filter which ModelPSQL2 to delete.
-     */
-    where: ModelPSQL2WhereUniqueInput
-  }
-
-
-  /**
-   * ModelPSQL2 deleteMany
-   */
-  export type ModelPSQL2DeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ModelPSQL2s to delete
-     */
-    where?: ModelPSQL2WhereInput
-  }
-
-
-  /**
-   * ModelPSQL2 without action
-   */
-  export type ModelPSQL2DefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ModelPSQL2
-     */
-    select?: ModelPSQL2Select<ExtArgs> | null
-  }
-
-
 
   /**
    * Model User
@@ -3847,14 +2894,6 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const ModelPSQL2ScalarFieldEnum: {
-    id: 'id',
-    model: 'model'
-  };
-
-  export type ModelPSQL2ScalarFieldEnum = (typeof ModelPSQL2ScalarFieldEnum)[keyof typeof ModelPSQL2ScalarFieldEnum]
-
-
   export const UserScalarFieldEnum: {
     id: 'id',
     email: 'email',
@@ -3947,45 +2986,6 @@ export namespace Prisma {
    * Deep Input Types
    */
 
-
-  export type ModelPSQL2WhereInput = {
-    AND?: ModelPSQL2WhereInput | ModelPSQL2WhereInput[]
-    OR?: ModelPSQL2WhereInput[]
-    NOT?: ModelPSQL2WhereInput | ModelPSQL2WhereInput[]
-    id?: IntFilter<"ModelPSQL2"> | number
-    model?: StringFilter<"ModelPSQL2"> | string
-  }
-
-  export type ModelPSQL2OrderByWithRelationInput = {
-    id?: SortOrder
-    model?: SortOrder
-  }
-
-  export type ModelPSQL2WhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: ModelPSQL2WhereInput | ModelPSQL2WhereInput[]
-    OR?: ModelPSQL2WhereInput[]
-    NOT?: ModelPSQL2WhereInput | ModelPSQL2WhereInput[]
-    model?: StringFilter<"ModelPSQL2"> | string
-  }, "id">
-
-  export type ModelPSQL2OrderByWithAggregationInput = {
-    id?: SortOrder
-    model?: SortOrder
-    _count?: ModelPSQL2CountOrderByAggregateInput
-    _avg?: ModelPSQL2AvgOrderByAggregateInput
-    _max?: ModelPSQL2MaxOrderByAggregateInput
-    _min?: ModelPSQL2MinOrderByAggregateInput
-    _sum?: ModelPSQL2SumOrderByAggregateInput
-  }
-
-  export type ModelPSQL2ScalarWhereWithAggregatesInput = {
-    AND?: ModelPSQL2ScalarWhereWithAggregatesInput | ModelPSQL2ScalarWhereWithAggregatesInput[]
-    OR?: ModelPSQL2ScalarWhereWithAggregatesInput[]
-    NOT?: ModelPSQL2ScalarWhereWithAggregatesInput | ModelPSQL2ScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"ModelPSQL2"> | number
-    model?: StringWithAggregatesFilter<"ModelPSQL2"> | string
-  }
 
   export type UserWhereInput = {
     AND?: UserWhereInput | UserWhereInput[]
@@ -4089,38 +3089,6 @@ export namespace Prisma {
     content?: StringWithAggregatesFilter<"Post"> | string
     published?: BoolWithAggregatesFilter<"Post"> | boolean
     userId?: IntWithAggregatesFilter<"Post"> | number
-  }
-
-  export type ModelPSQL2CreateInput = {
-    model: string
-  }
-
-  export type ModelPSQL2UncheckedCreateInput = {
-    id?: number
-    model: string
-  }
-
-  export type ModelPSQL2UpdateInput = {
-    model?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ModelPSQL2UncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    model?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ModelPSQL2CreateManyInput = {
-    id?: number
-    model: string
-  }
-
-  export type ModelPSQL2UpdateManyMutationInput = {
-    model?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ModelPSQL2UncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    model?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserCreateInput = {
@@ -4244,26 +3212,39 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type ModelPSQL2CountOrderByAggregateInput = {
-    id?: SortOrder
-    model?: SortOrder
+  export type PostListRelationFilter = {
+    every?: PostWhereInput
+    some?: PostWhereInput
+    none?: PostWhereInput
   }
 
-  export type ModelPSQL2AvgOrderByAggregateInput = {
+  export type PostOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type UserCountOrderByAggregateInput = {
+    id?: SortOrder
+    email?: SortOrder
+    name?: SortOrder
+  }
+
+  export type UserAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type ModelPSQL2MaxOrderByAggregateInput = {
+  export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
-    model?: SortOrder
+    email?: SortOrder
+    name?: SortOrder
   }
 
-  export type ModelPSQL2MinOrderByAggregateInput = {
+  export type UserMinOrderByAggregateInput = {
     id?: SortOrder
-    model?: SortOrder
+    email?: SortOrder
+    name?: SortOrder
   }
 
-  export type ModelPSQL2SumOrderByAggregateInput = {
+  export type UserSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -4299,42 +3280,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type PostListRelationFilter = {
-    every?: PostWhereInput
-    some?: PostWhereInput
-    none?: PostWhereInput
-  }
-
-  export type PostOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type UserCountOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    name?: SortOrder
-  }
-
-  export type UserAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type UserMaxOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    name?: SortOrder
-  }
-
-  export type UserMinOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    name?: SortOrder
-  }
-
-  export type UserSumOrderByAggregateInput = {
-    id?: SortOrder
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -4389,18 +3334,6 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type PostCreateNestedManyWithoutUserInput = {
     create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
     connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
@@ -4415,6 +3348,10 @@ export namespace Prisma {
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
   }
 
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
+  }
+
   export type PostUpdateManyWithoutUserNestedInput = {
     create?: XOR<PostCreateWithoutUserInput, PostUncheckedCreateWithoutUserInput> | PostCreateWithoutUserInput[] | PostUncheckedCreateWithoutUserInput[]
     connectOrCreate?: PostCreateOrConnectWithoutUserInput | PostCreateOrConnectWithoutUserInput[]
@@ -4427,6 +3364,14 @@ export namespace Prisma {
     update?: PostUpdateWithWhereUniqueWithoutUserInput | PostUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: PostUpdateManyWithWhereWithoutUserInput | PostUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type PostUncheckedUpdateManyWithoutUserNestedInput = {
@@ -4667,10 +3612,6 @@ export namespace Prisma {
      * @deprecated Use UserCountOutputTypeDefaultArgs instead
      */
     export type UserCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = UserCountOutputTypeDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use ModelPSQL2DefaultArgs instead
-     */
-    export type ModelPSQL2Args<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ModelPSQL2DefaultArgs<ExtArgs>
     /**
      * @deprecated Use UserDefaultArgs instead
      */
